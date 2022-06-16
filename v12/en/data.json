@@ -42,10 +42,6 @@
 				"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=manufacturing-developing-message-flow-applications"
 			}
 		},
-
-		
-		
-		
 		"pageDetails": {
 			"topicsName": "Tutorial Topics",
 			"_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
@@ -54,9 +50,11 @@
 				},
 				{
 					"title": "Create and start an Integration Server"
-				}, {
+				},
+				{
 					"title": "Create and deploy a Control Flow"
-				}, {
+				},
+				{
 					"title": "Create and deploy a Read Flow"
 				}
 			],
@@ -68,26 +66,22 @@
 			"summary": {
 				"overviewName": "OVERVIEW",
 				"_overviewComment": "This tutorial demonstrates how to create a simple message flow for reading data from an OPC server using the OPC-UA-Read Node.",
-				"sections": [{
-					"section": "OVERVIEW :",
-					"steps": {
-						"type": "ordered",
-						"details": [
-							{
-								"details": "This tutorial assumes you have installed and configured AppConnect for Manufacturing. If this is not the case, the tutorial has a pre-requisites section which will help you to complete the required tasks before running the tutorial."
-							},
-							{
-								"details": "After creating a DataSource connection to an OPCServer and starting the Integration Server, you can import a provided application project. The project contains two message flows: a Control Flow and a Read Flow."
-							},
-							{
-								"details": "After performing some configuration, you will first deploy and start the control flow. Next you will deploy and start the read flow."
-							},
-							{
-								"details": "The read flow is driven using HTTP data which causes the flow to exexute, read data from the OPC UA Server using the OPC-UA-Read node and return it back to the waiting HTTP client. "
-							}
-						]
+				"sections": [
+					{
+					"section": "This tutorial assumes you have installed and configured AppConnect for Manufacturing. If this is not the case, the tutorial has a pre-requisites section which will help you to complete the required tasks before running the tutorial."
 					},
-					"helpLinks": {
+					{
+					"section": "After creating a DataSource connection to an OPCServer and starting the Integration Server, you can import a provided application project. The project contains two message flows: a Control Flow and a Read Flow."
+					},
+					{
+					"section": "After performing some configuration, you will first deploy and start the control flow. Next you will deploy and start the read flow."
+					},
+					{
+					"section": "The read flow is driven using HTTP data which causes the flow to exexute, read data from the OPC UA Server using the OPC-UA-Read node and return it back to the waiting HTTP client. "
+					}
+				]
+			},
+			"helpLinks": {
 						"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
 						"title": "Find out more",
 						"details": [{
@@ -96,8 +90,6 @@
 							"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=manufacturing-app-connect-overview",
 							"type": "web"
 						}]
-					}
-				}]
 			}
 		},
 		"pageSteps": {
@@ -253,10 +245,7 @@
 								}
 							]
 						}
-
-
 					},
-
 					{
 						"section": "Deploy the Control Flow ",
 						"steps": {
@@ -314,7 +303,6 @@
 				]
 			}
 		},
-
 		"exits": {
 			"title": "Run Exits",
 			"details": [{
@@ -325,28 +313,4 @@
 		}
 
 	}
-
 }		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
- 
