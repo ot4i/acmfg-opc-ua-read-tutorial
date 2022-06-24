@@ -30,38 +30,42 @@
     },
     "tutorial": 
 	{
-        "_common": 
+		"_common": 
 		{
-            "name": "Discovery Connector - Using the Amazon S3 Request node",
-            "shortDescription": "Learn how to use the Amazon S3 Request node (requires v12.0.5.0 or higher)",
-            "durationText": "This tutorial takes approximately",
-            "durationTime": "10 minutes",
-            "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
-            "resourceToOpen": "MainFlow",
-            "helpLink": 
-			{
-                "text": "IBM Documentation",
-           		"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/acesw_home.html"
-            }
-        },
-        "pageDetails": 
-		{
-            "topicsName": "Tutorial topics",
-            "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
-            "topicList": 
-			[
-                {
-                    "title": "Amazon S3 Request node"
-                }
-            ],
-            "outcomesName": "Learning outcomes",
-            "_outcomesComment": "A description of what the user will have learned or accomplished by running this tutorial.",
-            "outcomeList": 
-			[
-                {
-                    "title": "Use IBM App Connect Enterprise to connect to Amazon S3 and issue requests to create, retrieve, update, delete, or view objects in Amazon S3."
-                }
-            ],
+			"name": "App Connect for Manufacturing - Using the OPC-UA-Read node to read data from an OPC Server",
+			"shortDescription": "Learn how to create a simple message flow for reading data from an OPC server using the OPC-UA-Read Node.",
+			"durationText": "This tutorial takes approximately",
+			"durationTime": "10 minutes",
+			"_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json.",
+			"resourceToOpen": "TestReadFlow.msgflow",
+			"helpLink": {
+				"text": "IBM Documentation",
+				"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=manufacturing-developing-message-flow-applications"
+			}		
+		
+		
+		},
+		"pageDetails": {
+			"topicsName": "Tutorial Topics",
+			"_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+			"topicList": [{
+					"title": "Create a Data source in the Manufacturing Perspective"
+				},
+				{
+					"title": "Create and start an Integration Server"
+				},
+				{
+					"title": "Create and deploy a Control Flow"
+				},
+				{
+					"title": "Create and deploy a Read Flow"
+				}
+			],
+			"outcomesName": "Learning outcomes",
+			"_outcomesComment": "Use IBM App Connect for Manufacturing to read values from an OPCServer using OPC-UA-Read Node.",
+			"outcomeList": [{
+				"title": "Use App Connect Manufacturing Pack to read values from an OPC Server using the OPC-UA-Read Node."
+			}],
             "summary": 
 			{
                 "overviewName": "OVERVIEW",
