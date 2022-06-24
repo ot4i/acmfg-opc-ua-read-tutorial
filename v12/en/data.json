@@ -132,23 +132,29 @@
             },
             "prepare": 
 			{
-                "overview": 
-				{
-                    "name": "Prepare",
-                    "heading": "This section describes how to complete the message flow configuration using the Connector Discovery process",
-                    "_prepareComment": "A description of what just happened when the user clicked Import, and what will happen when the user clicks Deploy.",
-                    "sections": [
-				    {
-                       "section":"<b>Create an Integration Server with a credential vault</b>",
-						  "steps":
-                        {
-                          "type": "ordered",
-                          "details":
-                          [
-                            {
-                                "details": "From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='uicontrol'>Create a local integration server</span>. We will leave most of the options with their default values. Type in a value (at least 8 characters long) for the Vault Key property. The instructions later in the tutorial will assume a value of <code>password123</code>. Untick the check box at the bottom of the dialog which is labelled <code>Start Integration Server</code>. Click Finish. The local Integration Server will be created using a project in your Toolkit's workspace as its work directory. We deliberately don't want to start up the server until later in the tutorial, because when the server process runs it will lock the vault from being used by other processes. Before running the server we want to use the Toolkit Connector Discovery process to populate the vault with the credentials needed for communication with Amazon S3. If you are already familiar with the Connector Discovery process you can now skip over the rest of the instructions in this Prepare section and move straight to the tutorial's Run section, Option 2."
-                            }
-						  ]
+				"overview": {
+				"name": "Prepare",
+				"heading": "Prepare for Read Flow",
+				"_prepareComment": "Prepare for Read Flow",
+				"sections": [{
+						"section": "Create a Data Source connection to an OPC Server using the App Connect Enterprise Toolkit:",
+						"steps": {
+							"type": "ordered",
+							"details": [{
+									"details": "To create a data source, complete the following steps."
+								},
+								{
+									"details": "Navigate to the Manufacturing Perspective > DataSources. Specify a name for the mapping node and click OK. The new data source gets created under the DataSource Properties window."
+								},
+								{
+									"details": "Select the Server URL Type as Endpoint"
+								},
+								{
+									"details": "Specify the Server URL: e.g. opc.tcp://TEST_OPC_SERVER:port/OPCUA/SimulationServer"
+								}, {
+									"details": "Select the default values for the rest of the parameters and click on Create DataSource"
+								}
+							]
 						}
 					},
 					{
