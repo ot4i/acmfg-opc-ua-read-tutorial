@@ -203,50 +203,98 @@
                     "name": "Run",
                     "heading": "",
                     "_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
-                "sections":[                            
-					           {  
-								"section": "<b>Option 1: Use the Flow Exerciser to test the tutorial scenario</b>",
-                                "steps": {
-                                    "type": "ordered",
-                                    "details": [                                      
-                                        {
-                                        "details": "In the Integration Explorer view of the Toolkit, right-click TEST_SERVER and select the option to Start."
-                                        },
-                                        {
-                                        "details": "Once the server has started, drag and drop deploy the policy project <span class='application'>ExamplePolicyProjectAmazonS3</span> in to TEST_SERVER."
-                                        },										
-										{
-                                        "details": "Return to <span class='resource'>ExampleAmazonS3Flow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
-                                        },
-										{
-                                            "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Any well-formed JSON will be fine, even something as simple as <code>{&quot;hello&quot;:&quot;world&quot;}</code>. Click Send and your message is sent to the HTTPInput node. You will receive a JSON reply message which is simply an echo of the same data which you sent in. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from Amazon S3, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the Amazon S3 Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the Amazon S3 Request node to see the data which has been retrieved."
-										}
-                                        ]
-                                    }
-                            },							   
-							{
-								"section": "<b>Option 2: Using the alternative provided application named CompleteExampleAmazonS3 to test the tutorial scenario</b>",
-                                "steps": {
-                                    "type": "ordered",
-                                    "details": [                                      
-                                        {
-											"details": "In order to reuse the completed application which is provided with this tutorial, you must configure your integration server with credentials for communicating with your Amazon S3 service instance.  Launch a command console session, and run the following command to create these credentials:<br><code>mqsicredentials --work-dir &lt;YourToolkitWorkspace&gt;\\TEST_SERVER  --vault-key password123 --create --credential-type amazons3 --credential-name CompletePolicyProjectAmazonS3_AmazonS31 --secret-access-key &lt;YourAmazonS3SecretAccessKey&gt; --access-key-id &lt;YourAmazonS3AccessKeyId&gt;</code>"
-										},
-										{	
-                                        "details": "Back in the Toolkit, in the Integration Explorer view, right-click <code>TEST_SERVER</code> and select the option to Start."
-                                        },
-                                        {
-                                        "details": "Locate the policy named <span class='application'>AmazonS31.policyxml</span> inside the policy project named <span class='application'>CompletePolicyProjectAmazonS3</span>, right-click the policy and select the option to Open With > Policy Editor. You will find the <strong>Region</strong> property is currently not configured (this is an optional field) but if you would like to focus your connection on a particular region you can fill out this field and resave the policy.  Drag and drop deploy the policy project <span class='application'>CompletePolicyProjectAmazonS3</span> to <code>TEST_SERVER</code>."
-                                        },
-										{
-                                        "details": "Return to <span class='resource'>CompleteExampleAmazonS3Flow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
-                                        },
-										{
-                                            "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Any well-formed JSON will be fine, even something as simple as <code>{&quot;hello&quot;:&quot;world&quot;}</code>. Click Send and your message is sent to the HTTPInput node. You will receive a JSON reply message which is simply an echo of the same data which you sent in. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from Amazon S3, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the Amazon S3 Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the Amazon S3 Request node to see the data which has been retrieved."
-										}
-									]
+                "sections":[  					
+					{
+						"section": "Configure the Read Message flow ",
+						"steps": {
+							"type": "ordered",
+							"details": [{
+									"details": "Open the TestReadFlow.msgflow. You will see 3 nodes: 'HTTP Input' , 'OPC-UA-Read', and 'HTTP Reply'"
+								},
+								{
+									"details": "Click on OPC-UA-Read node to open the OPC-UA-Read Node properties. "
+								},
+								{
+									"details": "From the properties window, click on the 'Add' button to open into Manufacturing perspective. "
+								},
+								{
+									"details": "Select the appropriate 'Data source' created in the Pre-Requisite section ."
+								},
+								{
+									"details": "Click on 'Refresh Source Item Tree' to load the Source Items. Select the node from the source tree for which you want to read data "
+								},
+								{
+									"details": "From the 'Client Items' tree, right-click on the 'Item' node and select 'Add Mapping Node'"
+								},
+								{
+									"details": "Specify a name for the node and click 'Ok' "
+								},
+								{
+									"details": "Click on 'Create Client Item' from the 'Client Item Properties' tab"
+								},
+								{
+									"details": "Click on 'Add Client Item to Read' from the 'Select' window at the bottom ."
+								},
+								{
+									"details": "Save the flow"
 								}
-							}
+							]
+						}
+					},
+					{
+						"section": "Deploy the Control Flow ",
+						"steps": {
+							"type": "ordered",
+							"details": [{
+									"details": "Please make sure you are connected to an Integration Server as described in the PreRequisite section"
+								},
+								{
+									"details": "From the Application Development Tab , under the ControlFlowApp-->Flows, right-click the TestControlFlow.msgflow and select 'Deploy' . "
+								}, {
+									"details": "From the 'Integration Server Select the Integration Server that you have started Click 'Finish' on the Deploy window. "
+								}, {
+									"details": "Click 'Ok' on the Confirm Window. Once the 'The task completed successfully' message is seen, close the 'Progress Information' window. "
+								}
+							]
+						}
+					},
+
+					{
+						"section": "Deploy the Read Flow ",
+						"steps": {
+							"type": "ordered",
+							"details": [{
+									"details": "Please make sure you are connected to an Integration Server as described in the PreRequisite section"
+								},
+								{
+									"details": "From the Application Development Tab , under the TestReadFlowApp-->Flows, right-click the TestReadFlow.msgflow and select 'Deploy' . "
+								}, {
+									"details": "From the 'Integration Server Select the Integration Server that you selected earlier for Control Flow .Click 'Finish' on the Deploy window. "
+								}, {
+									"details": "Click 'Ok' on the Confirm Window. Once the 'The task completed successfully' message is seen, close the 'Progress Information' window. "
+								}
+
+							]
+						}
+					},
+
+					{
+						"section": "Test the Read Flow ",
+						"steps": {
+							"type": "ordered",
+							"details": [{
+									"details": "Open a browser window and paste the following in the url: 'http://TESTSERVER:HTTPPORT/TestReadFlow' where TESTSERVER and HTTPPORT are specified when creating the Integration server in the PreRequisite section "
+								},
+								
+								{
+									"details": "Browser output should display the values read from the OPC server in case of successful operation. "
+								}
+
+							]
+						}
+					}
+							   
+							   
                     ]
                 },
                 "helpLinks": 
@@ -254,20 +302,12 @@
                     "title": "Find out more",
                     "details": 
 					[
-{
+                        {
                              "title": "IBM Documentation link to ",
-                             "description": "Amazon S3 Request node",
-                             "link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=nodes-amazon-s3-request-node",
-                             "type": "web"
-                        },
-						{
-                            "title": "IBM Documentation link to ",
-                            "description": "Testing your message flow by using the Flow exerciser",
-                            "link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/rt26110_.htm",
-							"type": "web"
-                        }
-						
-						
+				             "description": "Using the Manufacturing Perspective",
+				             "link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=applications-using-manufacturing-perspective",
+				             "type": "web"
+                        }					
                     ]
                 }
             }
