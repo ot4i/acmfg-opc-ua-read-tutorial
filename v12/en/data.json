@@ -66,42 +66,24 @@
 			"outcomeList": [{
 				"title": "Use App Connect Manufacturing Pack to read values from an OPC Server using the OPC-UA-Read Node."
 			}],
-            "summary": 
-			{
-                "overviewName": "OVERVIEW",
-                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
-                "sections": 
-				[
+            "summary": {
+				"overviewName": "OVERVIEW",
+				"_overviewComment": "This tutorial demonstrates how to create a simple message flow for reading data from an OPC server using the OPC-UA-Read Node.",
+				"sections": [
 					{
-						
-						
-						
-						
-						"section": "Amazon Simple Storage Service (Amazon S3) is a simple storage service that provides object storage through a web service interface. It uses the scalable storage infrastructure of Amazon.com and enables you to store objects, download and use data with other AWS services, and build applications that call for internet storage.  IBM App Connect Enterprise provides an Amazon S3 Request node, which enables you to connect to Amazon S3 and issue synchronous requests to create, retrieve, update, delete, or view objects. This tutorial demonstrates how to develop and run a message flow that connects to Amazon S3 and issues synchronous requests to retrieve information. This tutorial requires access to Amazon S3. The tutorial provides a partially completed message flow and detailed steps describing the development process step-by-step. A summary of what you will do is provided here:"
+					"section": "This tutorial assumes you have installed and configured AppConnect for Manufacturing. If this is not the case, the tutorial has a pre-requisites section which will help you to complete the required tasks before running the tutorial."
 					},
 					{
-                       "section":"1. Create a local integration server which has a vault for storing credentials"
-					},					
-					{
-                       "section":"2. Launch the connector discovery process using a policy project which will be used to store an Amazon S3 policy containing connection information."
+					"section": "After creating a DataSource connection to an OPCServer and starting the Integration Server, you can import a provided application project. The project contains two message flows: a Control Flow and a Read Flow."
 					},
 					{
-                       "section":"3. Select the object and action which the Amazon S3 Request node will execute"
+					"section": "After performing some configuration, you will first deploy and start the control flow. Next you will deploy and start the read flow."
 					},
 					{
-                       "section":"4. Select Filters which influence the way in which the message flow selects data"
-					},
-					{
-                       "section":"5. Save the results of the connector discovery process"
-					},
-					{
-                       "section":"6. Deploy and test the message flow, policy and credentials using the local integration server"
-					},
-					{
-                       "section":"For the convenience of more experienced users, the tutorial also provides a more complete version of the message flow, for which the connector discovery process has already been completed.  Instructions describe how to edit connection information in the policy, and how to create credentials to access your own instance of Amazon S3."
+					"section": "The read flow is driven using HTTP data which causes the flow to exexute, read data from the OPC UA Server using the OPC-UA-Read node and return it back to the waiting HTTP client. "
 					}
-                ]
-            },
+				]
+			},
 			"helpLinks": 
 			{
 				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
