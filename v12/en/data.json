@@ -84,80 +84,40 @@
 					}
 				]
 			},
-			"helpLinks": 
-			{
-				"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
-				"title": "Find out more",
-				"details": 
-				[
-					{
-						"title": "IBM Documentation link to ",
-						"description": "Using Amazon S3 with IBM App Connect Enterprise",
-						"link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=applications-using-amazon-s3-app-connect-enterprise",
-						"type": "web"
-					},
-					{
-						"title": "IBM Documentation link to ",
-						"description": "Connecting to Amazon S3 from IBM App Connect Enterprise",
-						"link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-connecting-amazon-s3-from-app-connect",
-						"type": "web"
-					}					
-				]
+			"helpLinks": {
+						"_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
+						"title": "Find out more",
+						"details": [{
+							"title": "Knowledge Center link to ",
+							"description": "IBM App Connect for Manufacturing overview",
+							"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=manufacturing-app-connect-overview",
+							"type": "web"
+						}]
 			}
-        },
-        "pageSteps": 
-		{
-            "create": 
-			{
-                "overview": 
-				{
-                    "name": "Create",
-                    "heading": "Import projects",
-                    "_createComment": "A description of what will happen when the user clicks Import.",
-                    "sections": 
-					[
-                        {
-                            "section": "When you click Import, three projects will be imported into your workspace:"
-                        },
+		},
+		"pageSteps": {
+			"create": {
+				"overview": {
+					"name": "Create",
+					"heading": "Import project",
+					"_createComment": "A description of what will happen when the user clicks Import.",
+					"sections": [{
+							"section": "Click <span class='uicontrol'>Import</span> and the <span class='uicontrol'>TestReadFlowApp and ControlFlowApp</span> application will be imported into your workspace."
+						},
 						{
-                            "section": "1. An application named <span class='application'>ExampleAmazonS3</span>"
-                        },
-						{
-                            "section": "2. An application named <span class='application'>CompleteExampleAmazonS3</span>"
-                        },
-						{
-                            "section": "3. A policy project named <span class='application'>CompletePolicyProjectAmazonS3</span>"
-                        },
-						{
-                            "section": "<span class='application'>ExampleAmazonS3</span> contains a single message flow named <span class='application'>ExampleAmazonS3Flow</span>. To save you time, most of the message flow is ready for use, but the Amazon S3 Request node has not yet been configured. This tutorial will guide you through the configuration of the node. The flow is driven by an HTTP input containing any well-formed JSON data, and uses a FlowOrder node to first acknowledge the input by echoing the same data back to the requesting client. Second in the flow sequence, the Amazon S3 Request communicates with Amazon S3. This node has its three output terminals (Failure, Out and NoData) wired to three separate Trace nodes to capture the results."
-                        },
-						{ 
-                        	"section":"<span class='application'>CompleteExampleAmazonS3</span> is very similar to <span class='application'>ExampleAmazonS3</span> but the message flow which it contains, named  <span class='application'>ExampleAmazonS3Flow</span> (which exposes a different URL Fragment), has already had its AmazonS3 Request node configured, and an associated policy with connection information has already been generated. If you're already familiar with connector discovery, this application may be helpful to demonstrate some administration concepts such as reusing discovered artifacts, editting policies and updating credentials."
-                        },
-                        {
-			    			"section": "<span class='application'>CompletePolicyProjectAmazonS3</span> contains a single policy named <span class='application'>AmazonS31</span> which is used by the application <span class='application'>CompleteExampleAmazonS3</span>."							
+							"section": "The <span class='uicontrol'>TestReadMessageFlow</span> message flow will be opened for you."
 						}
-                    ]
-                },
-                "helpLinks": 
-				{
-                    "title": "Find out more",
-                    "details": 
-					[
-                        				{
+					]
+				},
+ 				"helpLinks": {
+					"title": "Find out more",
+					"details": [{
 						"title": "IBM Documentation link to ",
-						"description": "Using Amazon S3 with IBM App Connect Enterprise",
-						"link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=applications-using-amazon-s3-app-connect-enterprise",
+						"description": "Developing Message Flow applications",
+						"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=manufacturing-developing-message-flow-applications",
 						"type": "web"
-					},
-                        {
-                             "title": "IBM Documentation link to ",
-                             "description": "Amazon S3 Request node",
-                             "link": "https://www.ibm.com/docs/en/app-connect/12.0?topic=nodes-amazon-s3-request-node",
-                             "type": "web"
-                        }
-                    ]
-                },
+					}]
+				},
                 "actions": 
 				{
                     "title": "Create Actions",
