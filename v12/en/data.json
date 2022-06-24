@@ -156,53 +156,44 @@
 								}
 							]
 						}
-					},
+					},		
 					{
-                       "section":"<b>Run the Connector Discovery process</b>",
-						  "steps":
-                        {
-                          "type": "ordered",
-                          "details":
-                          [
-                             {
-                                 "details": "When you imported the tutorial projects in the previous section, <span class='application'>ExampleAmazonS3Flow</span> in application <span class='application'>ExampleAmazonS3</span> will have been opened for you. First, check the properties of the three trace nodes in the messge flow, which are configured ready for deployment on a Windows system (their <code>File path</code> property is set to use the directory <code>C:\\temp</code>). If you are running on a different operating system, or if the file directory is not convenient for you, then feel free to change it. Next, select the Amazon S3 Request node and view its Properties window at the base of the screen. At this stage you should see an error stating that an action must be specified. Every Amazon S3 Request node (in fact, every Discovery Connector node) requires configuration to define what action it should execute against what object in the endpoint system. You make these decisions using the Connector Discovery process. Click the Launch Connector Discovery button."
-							 },							 
-							{
-        "details": "The Launch Connector Discovery wizard will open. The process of connecting to Amazon S3 and discovering information from it, will cause your Amazon S3 credentials to be saved in the vault, and your Amazon S3 connection information to be saved in a policy. Fill out the three required property values shown below and then click the Launch Discovery button:",
-        "substeps": {
-          "type":"unordered",
-          "details": [
-            {
-              "details": "<strong>Policy Project:</strong> Click the New button and create a policy project named <code>ExamplePolicyProjectAmazonS3</code>"
-            },
-            {
-              "details": "<strong>Work directory:</strong> Click the Browse button and navigate to the TEST_SERVER directory in your Toolkit workspace. For example, this would be C:\\workspace\\TEST_SERVER if your Toolkit workspace were at C:\\workspace."
-            },
-            {
-              "details": "<strong>Vault Key:</strong> Type the same vault key which you used when creating your local integration server (named TEST_SERVER) earlier in the tutorial, for example <code>password123</code>"
-            }
-          ]
-		}
-	  }, 
-                            {
-                                 "details": "A new Configure connector node window will open. If you had previously connected to an Amazon S3 system then a list of those connections would be displayed, but in this example the status of the Amazon S3 connector is shown as <code>Not connected</code>. Underneath this you will see a list of Amazon S3 objects (such as Buckets, Object ACLs, Object tags and Objects) which can be expanded to see the actions which can be executed against these objects. In this tutorial, we will expand the <code>Buckets</code> section and choose to <code>Retrieve all buckets</code>. The list of objects and actions will be replaced with a Connect button. Click the Connect button."
-							},
-							{
-                                 "details": "The page will refresh and display Connect to Amazon S3, and offer two mandatory fields for <strong>Secret Access Key</strong> and <strong>Access key ID</strong>. Type in these required details and then click Connect."
-							},
-							{
-                                 "details": "Connecting to Amazon S3 may take a few seconds. For this particular choice of action, because we are retrieving all buckets, there is no need for any further Where clause to be completed. Reduce the value for Maximum number of items to retrieve to 3, which should also cause the radio button to select the option to <code>Process 3 items from the collection</code>."
-							},
-							{
-                                 "details": "At the top of the window click the Save button, and you should see a confirmation message briefly appear. Close the Configure connector window and return to the Toolkit. <strong>It is important to remember this step</strong> otherwise the vault will remain locked and you will be unable to start your integration server TEST_SERVER when you come to test the flow in the last section of the tutorial. You will now find that the properties of the Amazon S3 Request node in the message flow have been updated. Save the message flow.  Explore the properties of the Amazon S3 Request node. The Basic properties tab will now display a short description of <code>Retrieve all buckets</code>, along with the <strong>Action</strong> (<code>RETRIEVEALL</code>) and the <strong>object</strong> (<code>bucketcollection</code>). On the Connection properties tab, the <strong>Policy</strong> will have been configured as <code>{ExamplePolicyProjectAmazonS3}:AmazonS31</code>. The Filter properties tab will show the Filter Limit which we just selected."
-							}
-						  ]
+						"section": "Create and run Integration Server :",
+						"steps": {
+							"type": "ordered",
+							"details": [{
+									"details": "Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\\TESTSERVER --name TESTSERVER --admin-rest-api 7600 --http-port-number 7800 --console-log</code> <br>where <b>C:\\TESTSERVER</b> is a folder on your file system that the server will use for its working directory."
+								},
+
+								{
+									"details": "Modify C:\\TESTSERVER\\server.conf.yaml to add the following lines after the line ConnectorProviders:"
+								},								
+								{
+									"details": "Please note that you would need to change the jarsURL value as per your installation of ACMFG. But it should point to the amd64_nt_4 folder"
+								},
+								{
+									"details": "ACMfg:<b>    connectorClassName: 'com.ibm.industrypack.industryclient.connector.ICConnectorFactory'<b>    jarsURL: 'C:\\Program Files\\IBM\\ACMfg\\3.0.1.0\\runtime\\amd64_nt_4'<b>   property1: 'trustCertificate=true;allowEndpointMismatch=true'<br>   property2: 'isHA=true;discardData=false;mqttHostName=localhost;mqttPort=11883' "
+								},
+								{
+									"details": "Save the above server.conf.yaml file and restart the Integration server using the command mentioned above"
+								},
+								{
+									"details": "In the App Connect Enterprise Toolkit Integration Explorer view, right click the folder <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/IntegrationServers.png' alt='' /> and select the menu item  <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/ConnectToAnIntegrationServer.png' alt='' />. In the connection details panel, specify the <b>Host name</b> to be <b>localhost</b>, the <b>Port</b> to be <b>7600</b> and click Finish. This will connect your Toolkit and display the integration server that you started in the last step <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/TESTSERVER.png' alt='' />"
+								}
+							]
 						}
 					}
              ]
                 },
                 "helpLinks": 
 				{
+								"title": "Find out more",
+			"details": [{
+				"title": "IBM Documentation link to ",
+				"description": "Using the Manufacturing Perspective",
+				"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=applications-using-manufacturing-perspective",
+				"type": "web"
+			}]
                 }
             },
             "run": 
