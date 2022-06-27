@@ -37,7 +37,7 @@
 			"durationText": "This tutorial takes approximately",
 			"durationTime": "10 minutes",
 			"_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json.",
-			"resourceToOpen": "TestReadFlow.msgflow",
+			"resourceToOpen": "MainFlow",
 			"helpLink": {
 				"text": "IBM Documentation",
 				"link": "https://www.ibm.com/docs/en/app-connect/11.0.0?topic=manufacturing-developing-message-flow-applications"
