@@ -63,7 +63,7 @@
 				"overviewName": "OVERVIEW",
 				"_overviewComment": "This tutorial demonstrates how to create a simple message flow to read data from an OPC server using the OPC-UA-Read Node.",
 				"sections": [{
-						"section": "This tutorial assumes you have installed and configured AppConnect for Manufacturing. For more information, see Installing IBM App Connect for Manufacturing in the help links provided below."
+						"section": "This tutorial assumes you have installed and configured App Connect for Manufacturing. For more information, see Installing IBM App Connect for Manufacturing in the help links provided below."
 					},
 					{
 						"section": "You must create an integration server before you can deploy integration solutions and related resources. You will also need to connect your Toolkit to an OPC server."
